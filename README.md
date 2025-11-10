@@ -1,36 +1,22 @@
-name: Build and Deploy
-
-on:
-  push:
-    branches:
-      - main   # 或你想要的分支
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '20'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build
-
-    # 如果要包前端/後端，可加多個 build 步驟
-    # - name: Build frontend
-    #   run: cd frontend && npm install && npm run build
-    # - name: Build backend
-    #   run: cd backend && npm install
-
-    - name: Archive production build
-      run: tar -czvf webapp.tar.gz ./dist  # 假設build結果在 dist 資料夾
-
-    # 可加上自動部署（如 SSH/SCP 上傳、或部署到雲端），這部分可依需求補充
+{
+	"event": "c3 session started",
+	"deviceId": "9fd5d422-99a1-4c7d-9666-ca3637927fa6",
+	"timestamp": 1726760778899,
+	"properties": {
+		"amplitude_session_id": 1726760778800,
+		"amplitude_event_id": 0,
+		"platform": "Mac OS",
+		"c3Version": "2.34.5",
+		"isFirstUsage": false,
+		"packageManager": "npm",
+		"args": {
+			"_": [],
+			"auto-update": false,
+			"autoUpdate": false,
+			"experimental": false,
+			"open": true,
+			"$0": "create-cloudflare",
+			"additionalArgs": []
+		}
+	}
+}
